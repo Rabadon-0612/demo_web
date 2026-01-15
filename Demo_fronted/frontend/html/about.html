@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Giới thiệu Công ty Cơ Khí Pro - 30 năm kinh nghiệm sản xuất nồi hơi và thiết bị áp lực hàng đầu Việt Nam.">
+    <title>Giới Thiệu | CƠ KHÍ PRO</title>
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- Custom Style for About Page (embedded for modularity/ease of backend integration later) -->
+    <style>
+        /* About Hero */
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 80px;
+            /* Header height */
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        /* Intro Section */
+        .u-section {
+            padding: 80px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.2rem;
+            color: var(--heading);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .about-content p {
+            color: var(--body);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .stat-box h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .stat-box p {
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        /* Vision & Mission */
+        .bg-light {
+            background-color: var(--background-light);
+        }
+
+        .vm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .vm-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .vm-card h3 {
+            font-size: 1.5rem;
+            color: var(--heading);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .vm-icon {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        /* Timeline / History */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--border);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .t-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .t-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: #fff;
+            border: 4px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .t-left {
+            left: 0;
+        }
+
+        .t-right {
+            left: 50%;
+        }
+
+        .t-left::after {
+            right: -10px;
+        }
+
+        .t-right::after {
+            left: -10px;
+        }
+
+        .t-content {
+            padding: 20px 30px;
+            background-color: #fff;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+
+        .t-year {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .t-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .t-container::after {
+                left: 21px;
+            }
+
+            .t-left::after,
+            .t-right::after {
+                left: 21px;
+            }
+
+            .t-right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header (Same as main.html) -->
+    <header class="header">
+        <div class="container header__container">
+            <nav class="nav">
+                <a href="main.html" class="logo">CƠ KHÍ <span>PRO</span></a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <!-- Navigation Items duplicated from main.html for consistency -->
+                        <li class="nav__item dropdown">
+                            <a href="#" class="nav__link dropdown__link" style="color: var(--primary);">
+                                Công ty <span class="dropdown__arrow">▼</span>
+                            </a>
+                            <ul class="dropdown__menu">
+                                <li><a href="#" class="dropdown__item">Giới thiệu</a></li>
+                                <li><a href="#" class="dropdown__item">Hồ sơ năng lực</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item dropdown"><a href="main.html#products" class="nav__link">Sản phẩm</a></li>
+                        <li class="nav__item dropdown"><a href="main.html#services" class="nav__link">Dịch vụ</a></li>
+                        <li class="nav__item"><a href="main.html#contact" class="nav__link">Liên hệ</a></li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">✕</div>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Về Chúng Tôi</h1>
+            <p>Đối tác tin cậy trong lĩnh vực cơ khí & giải pháp năng lượng sạch</p>
+        </div>
+    </section>
+
+    <!-- General Info -->
+    <section class="u-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>Hơn 30 Năm Kinh Nghiệm & Phát Triển</h2>
+                    <p><strong>Cơ Khí Pro</strong> (tiền thân là Martech Boiler) là nhà sản xuất nồi hơi hàng đầu tại
+                        Việt Nam, thành lập năm 1993. Chúng tôi chuyên cung cấp các giải pháp năng lượng bền vững cho
+                        doanh nghiệp.</p>
+                    <p>Với giá trị cốt lõi <strong>"Lấy khách hàng làm trung tâm"</strong>, chúng tôi không ngừng cải
+                        tiến công nghệ để mang lại hiệu suất cao nhất và chi phí vận hành thấp nhất.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <h3>1993</h3>
+                        <p>Năm thành lập</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>650+</h3>
+                        <p>Nhân sự chuyên môn</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>15+</h3>
+                        <p>Quốc gia xuất khẩu</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>30M$</h3>
+                        <p>Vốn điều lệ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="u-section bg-light">
+        <div class="container">
+            <h2 class="section-title">Tầm Nhìn & Sứ Mệnh</h2>
+            <div class="vm-grid">
+                <div class="vm-card">
+                    <h3><span class="vm-icon">👁️</span> Tầm Nhìn</h3>
+                    <p>Trở thành biểu tượng uy tín hàng đầu khu vực về giải pháp năng lượng sạch và thiết bị áp lực,
+                        đồng hành cùng sự phát triển bền vững của doanh nghiệp.</p>
+                </div>
+                <div class="vm-card">
+                    <h3><span class="vm-icon">🎯</span> Sứ Mệnh</h3>
+                    <p>Cung cấp các sản phẩm cơ khí chất lượng cao, an toàn và tối ưu chi phí. Áp dụng công nghệ tiên
+                        tiến để giảm thiểu tác động đến môi trường.</p>
+                </div>
+                <div class="vm-card">
+                    <h3><span class="vm-icon">💎</span> Giá Trị Cốt Lõi</h3>
+                    <p>Tận tâm - Chuyên nghiệp - Sáng tạo - Trung thực. Chúng tôi cam kết chất lượng trong từng mối hàn,
+                        từng sản phẩm xuất xưởng.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Timeline -->
+    <section class="u-section">
+        <div class="container">
+            <h2 class="section-title">Lịch Sử Hình Thành</h2>
+            <div class="timeline">
+                <div class="t-container t-left">
+                    <div class="t-content">
+                        <span class="t-year">2022</span>
+                        <p>Doanh thu đạt 46 triệu USD, khẳng định vị thế dẫn đầu thị trường nội địa.</p>
+                    </div>
+                </div>
+                <div class="t-container t-right">
+                    <div class="t-content">
+                        <span class="t-year">2012</span>
+                        <p>Mở rộng nhà máy tại KCN Nhơn Trạch, nâng cao năng lực sản xuất lên gấp 3 lần.</p>
+                    </div>
+                </div>
+                <div class="t-container t-left">
+                    <div class="t-content">
+                        <span class="t-year">2005</span>
+                        <p>Xuất khẩu lô hàng nồi hơi đầu tiên sang thị trường Đông Nam Á.</p>
+                    </div>
+                </div>
+                <div class="t-container t-right">
+                    <div class="t-content">
+                        <span class="t-year">1993</span>
+                        <p>Thành lập công ty với quy mô xưởng chế tạo nhỏ tại TP.HCM.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Reduced version) -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 20px;">
+                <p>&copy; 2024 CÔNG TY CỔ PHẦN CƠ KHÍ PRO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

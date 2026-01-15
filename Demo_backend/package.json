@@ -1,0 +1,18 @@
+{
+  "name": "demo_backend",
+  "version": "4.18.2",
+  "description": "package.json",
+  "keywords": [
+    "example",
+    "package.json",
+    "npm",
+    "init"
+  ],
+  "license": "ISC",
+  "author": "Rabadon-0612 nguyenphuquocbao0612@gmail.com",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
